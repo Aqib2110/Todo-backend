@@ -226,34 +226,37 @@ res.json({
  }
 })
 app.get("/",AuthMiddleware,(req,res)=>{
-    const authHeader = req.headers['authorization'];
-    console.log(authHeader,"fyurtry35347567566575676579657");
-    const token = authHeader && authHeader.split(' ')[1];
-    console.log(token);
-    if(token == null){
-        res.json({
-            error:"not found",
-        })
-        return;
-    }
-    else{
-        try {
-            const decoded = jwt.verify(token,jwt_secret);
-            const username = decoded.username;
-            if(username){
-                const userfind = users.find(user=>user.username == username)
-              if(userfind){
-                res.json({
-                    message:"clear"
-                })
-              }
-            }
-        } catch (err) {
-            res.json({
-                error:"user not found"
-            });
-        }
-    }
+    // const authHeader = req.headers['authorization'];
+    // console.log(authHeader,"fyurtry35347567566575676579657");
+    // const token = authHeader && authHeader.split(' ')[1];
+    // console.log(token);
+    // if(token == null){
+    //     res.json({
+    //         error:"not found",
+    //     })
+    //     return;
+    // }
+    // else{
+    //     try {
+    //         const decoded = jwt.verify(token,jwt_secret);
+    //         const username = decoded.username;
+    //         if(username){
+    //             const userfind = users.find(user=>user.username == username)
+    //           if(userfind){
+    //             res.json({
+    //                 message:"clear"
+    //             })
+    //           }
+    //         }
+    //     } catch (err) {
+    //         res.json({
+    //             error:"user not found"
+    //         });
+    //     }
+    // }
+    res.json({
+        message:"clear"
+    })
    
 })
 app.get('/logout',(req,res)=>{
