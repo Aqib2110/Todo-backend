@@ -16,10 +16,12 @@ async function connect()
 connect();
 const app = express();
 app.use(express.json());
-app.use(cors({ 
-    origin: 'http://localhost:5173', 
-    credentials: true,
-    // allowedHeaders: ['Content-Type', 'Authorization']
+
+app.use(cors({
+origin:["https://todo-92cn.vercel.app"],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true 
 }));
 const users = [];
 app.use(express.urlencoded({extended:true}))
