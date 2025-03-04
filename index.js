@@ -5,6 +5,7 @@ const cors = require('cors')
 const jwt = require('jsonwebtoken')
 const mongoose = require('mongoose');
 require('dotenv').config();
+const PORT = process.env.PORT;
 const { userModel,todoModel, workModel, personalModel, homeModel } = require('./db');
 async function connect()
 {
@@ -30,7 +31,6 @@ app.use(cookieParser());
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 const jwt_secret = "ILOVEALLAH"
-const PORT = 3001;
 // app.get("/signup",(req,res)=>{
 //     res.render('signup')
 // })
