@@ -23,6 +23,7 @@ origin:["https://todo-92cn.vercel.app"],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true 
 }));
+app.options('*', cors());
 const users = [];
 app.use(express.urlencoded({extended:true}))
 app.use(cookieParser());
