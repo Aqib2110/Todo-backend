@@ -128,7 +128,7 @@ res.json({
 })
 
 app.get('/worktodos',AuthMiddleware,async(req,res)=>{
-    const userId = req.user;
+    const userId = req.user?._id;
    const todos = await workModel.find({
 userId:userId
    });
