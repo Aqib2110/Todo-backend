@@ -267,18 +267,10 @@ app.get("/",AuthMiddleware,(req,res)=>{
     //         });
     //     }
     // }
-  const id = req.user._id;
-  if(id){
+  
       res.json({
         message:"clear"
-    })
-  }
-  else{
-      res.json({
-        error:"error occured"
-    })
-  
-   
+    }) 
 })
 app.get('/logout',(req,res)=>{
     
