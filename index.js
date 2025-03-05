@@ -69,7 +69,7 @@ const AuthMiddleware = async(req,res,next)=>{
             });
             if(userfind){
                 req.user = userfind;
-                console.log(userfind)
+                console.log(userfind,"12345")
             }
             else{
                 console.log("user not found")
@@ -128,7 +128,7 @@ res.json({
 })
 
 app.get('/worktodos',AuthMiddleware,async(req,res)=>{
-    const userId = req.user._id;
+    const userId = req.user;
    const todos = await workModel.find({
 userId:userId
    });
