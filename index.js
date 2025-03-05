@@ -37,7 +37,7 @@ app.use((req, res, next) => {
     }
 });
 
-app.options('*', cors());
+// app.options('*', cors());
 const users = [];
 app.use(express.urlencoded({extended:true}))
 app.use(cookieParser());
